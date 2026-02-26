@@ -3,8 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>HIGHENCY | AI Marketing Agency</title>
+    <meta name="description" content="PENSAR. CREAR. ESCALAR. Agencia de marketing impulsada por IA.">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://highency.com/">
+    <meta property="og:title" content="HIGHENCY | AI Marketing Agency">
+    <meta property="og:description" content="Estrategias de alto nivel impulsadas por Inteligencia Artificial.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/OZHTEAMS/HIGHENCY/main/HIGHENCY%20OHO.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/OZHTEAMS/HIGHENCY/main/HIGHENCY%20OHO.png">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;900&family=Space+Mono&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --bg-color: #000000;
@@ -27,7 +40,7 @@
             text-transform: uppercase;
         }
 
-        /* TEXTURA DE RUIDO IA */
+        /* EFECTO DE RUIDO ANALÓGICO */
         body::before {
             content: "";
             position: fixed;
@@ -39,7 +52,7 @@
             z-index: 10;
         }
 
-        /* PANTALLA DE CARGA */
+        /* CARGADOR DE SISTEMA */
         #loader {
             position: fixed;
             top: 0; left: 0;
@@ -58,7 +71,7 @@
             animation: pulse 1s infinite;
         }
 
-        /* CONTENEDOR CENTRAL */
+        /* CONTENEDOR DE MARCA */
         .brand-container {
             text-align: center;
             z-index: 5;
@@ -71,15 +84,14 @@
             margin-bottom: 25px;
             margin-right: -30px;
             position: relative;
+            /* Se eliminó la transición y el efecto hover de glitch */
         }
 
-        /* EFECTO GLITCH EN HOVER */
         h1:hover {
-            text-shadow: 2px 0 var(--accent-color), -2px 0 #ff00c1;
-            cursor: default;
+            cursor: default; /* Solo cambia el puntero, no el color */
         }
 
-        /* EFECTO TYPING */
+        /* MÉTODO (TYPING) */
         .method-box {
             height: 20px;
             display: flex;
@@ -97,7 +109,7 @@
             animation: blink 0.7s step-end infinite;
         }
 
-        /* ENLACES SOCIALES */
+        /* LINKS SOCIALES */
         .social-links {
             margin-top: 80px;
             display: flex;
@@ -123,77 +135,9 @@
             transform: translateY(-2px);
         }
 
+        /* PIE DE PÁGINA */
         .footer {
             position: absolute;
             bottom: 40px;
             font-size: 0.5rem;
-            letter-spacing: 6px;
-            opacity: 0.2;
-        }
-
-        @keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
-        @keyframes blink { 50% { border-color: transparent; } }
-
-    </style>
-</head>
-<body>
-
-    <div id="loader">
-        <div class="loader-text">ESTABLISHING_CONNECTION...</div>
-    </div>
-
-    <div class="brand-container">
-        <h1>HIGHENCY</h1>
-        <div class="method-box">
-            <div id="typewriter"></div>
-        </div>
-    </div>
-
-    <div class="social-links">
-        <a href="https://instagram.com/highency_" target="_blank">INSTAGRAM</a>
-        <a href="mailto:highency@gmail.com">CONTACTO</a>
-    </div>
-
-    <div class="footer">SYSTEM_V.1.0 // HIGHER INTELLIGENCE.</div>
-
-    <script>
-        // Manejo del Loader
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                const loader = document.getElementById('loader');
-                loader.style.opacity = '0';
-                setTimeout(() => loader.style.display = 'none', 800);
-            }, 1800);
-        });
-
-        // Lógica de Typing (Pensar, Crear, Escalar)
-        const words = ["PENSAR", "CREAR", "ESCALAR"];
-        let i = 0, j = 0, isDeleting = false;
-        const typewriterEl = document.getElementById("typewriter");
-
-        function type() {
-            const currentWord = words[i];
-            
-            if (isDeleting) {
-                typewriterEl.textContent = currentWord.substring(0, j - 1);
-                j--;
-            } else {
-                typewriterEl.textContent = currentWord.substring(0, j + 1);
-                j++;
-            }
-
-            if (!isDeleting && j === currentWord.length) {
-                setTimeout(() => isDeleting = true, 2000);
-            } else if (isDeleting && j === 0) {
-                isDeleting = false;
-                i = (i + 1) % words.length;
-            }
-
-            const speed = isDeleting ? 100 : 180;
-            setTimeout(type, speed);
-        }
-        
-        type();
-    </script>
-</body>
-</html>
+            letter-
