@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>HIGHENCY | AI Marketing</title>
+    <style>
+        body {
+            background-color: #000000; /* Negro Puro */
+            color: #FFFFFF; /* Blanco Puro */
+            font-family: 'Inter', sans-serif; /* O la que elegiste en Canva */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-transform: uppercase;
+        }
+        h1 {
+            font-size: 3rem;
+            letter-spacing: 10px;
+            font-weight: 800;
+        }
+        p {
+            font-size: 1rem;
+            letter-spacing: 5px;
+            opacity: 0.8;
+        }
+        .link {
+            margin-top: 30px;
+            color: white;
+            text-decoration: none;
+            border: 1px solid white;
+            padding: 10px 20px;
+            transition: 0.3s;
+        }
+        .link:hover {
+            background: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>HIGHENCY</h1>
+    <p>PENSAR • CREAR • ESCALAR</p>
+    <a href="mailto:tu-correo@dominio.com" class="link">CONTACTO</a>
+</body>
+</html>
