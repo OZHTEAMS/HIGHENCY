@@ -9,7 +9,7 @@
         :root {
             --bg-color: #000000;
             --main-color: #ffffff;
-            --accent-color: #00fff9; /* Cyan IA para efectos sutiles */
+            --accent-color: #00fff9;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,7 +27,7 @@
             text-transform: uppercase;
         }
 
-        /* 1. EFECTO DE RUIDO PREMIUM */
+        /* TEXTURA DE RUIDO IA */
         body::before {
             content: "";
             position: fixed;
@@ -39,7 +39,7 @@
             z-index: 10;
         }
 
-        /* 2. PRE-LOADER DE SISTEMA */
+        /* PANTALLA DE CARGA */
         #loader {
             position: fixed;
             top: 0; left: 0;
@@ -58,21 +58,28 @@
             animation: pulse 1s infinite;
         }
 
-        /* 3. TÍTULO PRINCIPAL (GRANDE Y CENTRADO) */
+        /* CONTENEDOR CENTRAL */
         .brand-container {
             text-align: center;
             z-index: 5;
         }
 
         h1 {
-            font-size: clamp(2.5rem, 10vw, 5rem);
+            font-size: clamp(2.5rem, 10vw, 5.5rem);
             font-weight: 900;
-            letter-spacing: clamp(15px, 3vw, 30px);
-            margin-bottom: 20px;
-            margin-right: -30px; /* Compensa el espacio de la última letra */
+            letter-spacing: clamp(15px, 3vw, 35px);
+            margin-bottom: 25px;
+            margin-right: -30px;
+            position: relative;
         }
 
-        /* 4. EFECTO TYPING (EL "MÉTODO") */
+        /* EFECTO GLITCH EN HOVER */
+        h1:hover {
+            text-shadow: 2px 0 var(--accent-color), -2px 0 #ff00c1;
+            cursor: default;
+        }
+
+        /* EFECTO TYPING */
         .method-box {
             height: 20px;
             display: flex;
@@ -82,15 +89,15 @@
 
         #typewriter {
             font-family: 'Space Mono', monospace;
-            font-size: clamp(0.7rem, 2vw, 1rem);
+            font-size: clamp(0.7rem, 2vw, 0.9rem);
             letter-spacing: 8px;
-            opacity: 0.6;
+            opacity: 0.5;
             border-right: 2px solid var(--main-color);
             padding-right: 5px;
             animation: blink 0.7s step-end infinite;
         }
 
-        /* 5. REDES SOCIALES (ESTILO MINIMAL) */
+        /* ENLACES SOCIALES */
         .social-links {
             margin-top: 80px;
             display: flex;
@@ -106,15 +113,16 @@
             opacity: 0.4;
             transition: all 0.4s ease;
             font-family: 'Space Mono', monospace;
+            border-bottom: 1px solid transparent;
+            padding-bottom: 5px;
         }
 
         .social-links a:hover {
             opacity: 1;
-            text-shadow: 1px 0 var(--accent-color), -1px 0 #ff00c1;
+            border-bottom: 1px solid var(--main-color);
             transform: translateY(-2px);
         }
 
-        /* 6. FOOTER */
         .footer {
             position: absolute;
             bottom: 40px;
@@ -123,7 +131,6 @@
             opacity: 0.2;
         }
 
-        /* ANIMACIONES */
         @keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
         @keyframes blink { 50% { border-color: transparent; } }
 
@@ -144,13 +151,13 @@
 
     <div class="social-links">
         <a href="https://instagram.com/highency_" target="_blank">INSTAGRAM</a>
-        <a href="highency@gmail.com">CONTACTO</a>
+        <a href="mailto:highency@gmail.com">CONTACTO</a>
     </div>
 
     <div class="footer">SYSTEM_V.1.0 // HIGHER INTELLIGENCE.</div>
 
     <script>
-        // Lógica del Loader
+        // Manejo del Loader
         window.addEventListener('load', () => {
             setTimeout(() => {
                 const loader = document.getElementById('loader');
@@ -159,7 +166,7 @@
             }, 1800);
         });
 
-        // Lógica del Typewriter mejorada
+        // Lógica de Typing (Pensar, Crear, Escalar)
         const words = ["PENSAR", "CREAR", "ESCALAR"];
         let i = 0, j = 0, isDeleting = false;
         const typewriterEl = document.getElementById("typewriter");
