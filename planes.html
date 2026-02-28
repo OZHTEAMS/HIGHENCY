@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PLANES</title>
+    <title>PLANES | HIGHENCY</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;900&family=Space+Mono&display=swap" rel="stylesheet">
     <style>
         :root { --bg: #000; --txt: #fff; }
@@ -12,7 +12,7 @@
             background: var(--bg); color: var(--txt);
             font-family: 'Inter', sans-serif; min-height: 100vh;
             display: flex; flex-direction: column; align-items: center;
-            justify-content: center; text-transform: uppercase; padding: 20px;
+            justify-content: flex-start; text-transform: uppercase; padding: 60px 20px;
         }
         body::before {
             content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -23,7 +23,7 @@
         
         .container {
             display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;
-            max-width: 1200px; z-index: 5;
+            max-width: 1200px; z-index: 5; margin-bottom: 80px;
         }
         .card {
             border: 1px solid rgba(255,255,255,0.1); padding: 35px;
@@ -47,16 +47,26 @@
             text-align: center; transition: 0.3s; font-family: 'Space Mono', monospace;
         }
         .btn-select:hover { background: #fff; color: #000; }
+
+        /* SECCIÓN DE LOGS / AUTORIDAD */
+        .logs-section {
+            width: 100%; max-width: 940px; border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 40px; z-index: 5; margin-bottom: 60px;
+        }
+        .logs-header { font-family: 'Space Mono', monospace; font-size: 0.6rem; color: #555; margin-bottom: 30px; letter-spacing: 5px; }
+        .logs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 25px; }
+        .log-item { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 2px; opacity: 0.4; transition: 0.3s; }
+        .log-item:hover { opacity: 1; color: #00fff9; }
         
-        .back { margin-top: 60px; font-size: 0.6rem; letter-spacing: 4px; opacity: 0.3; color: #fff; text-decoration: none; transition: 0.3s; }
+        .back { font-size: 0.6rem; letter-spacing: 4px; opacity: 0.3; color: #fff; text-decoration: none; transition: 0.3s; margin-bottom: 40px; }
         .back:hover { opacity: 1; }
 
-        @media (max-width: 768px) {
-            .card { width: 100%; max-width: 350px; }
-        }
+        @media (max-width: 768px) { .card { width: 100%; max-width: 350px; } }
     </style>
 </head>
 <body>
+
+    <a href="index.html" class="back">< VOLVER AL INICIO</a>
 
     <h2>ESTRUCTURA_DE_INVERSIÓN</h2>
 
@@ -69,7 +79,7 @@
                 • ANÁLISIS COMPLETO<br>
                 • DOCUMENTO DE ESTRATEGIA
             </p>
-            <a href="mailto:highency@gmail.com?subject=Interés en Plan Starter" class="btn-select">SELECCIONAR</a>
+            <a href="https://tally.so/r/rjl0AR" target="_blank" class="btn-select">AGENDAR CALIFICACIÓN</a>
         </div>
 
         <div class="card" style="border-color: rgba(255,255,255,0.4);">
@@ -78,8 +88,10 @@
             <p class="details">
                 • 3 REUNIONES SEMANALES (L-V)<br>
                 • 1 HORA DE FEEDBACK Y AVANCES<br>
+                • CORRECCIÓN DE DETALLES<br>
+                • FUNCIONAMIENTO COMPLETO
             </p>
-            <a href="mailto:highency@gmail.com?subject=Interés en Plan Pro" class="btn-select">SELECCIONAR</a>
+            <a href="https://tally.so/r/rjl0AR" target="_blank" class="btn-select">AGENDAR CALIFICACIÓN</a>
         </div>
 
         <div class="card">
@@ -88,17 +100,23 @@
             <p class="details">
                 • DISPONIBILIDAD LUNES A VIERNES<br>
                 • ACOMPAÑAMIENTO INTEGRAL<br>
-                • PRIORIDAD MÁXIMA 
+                • PRIORIDAD MÁXIMA DE EJECUCIÓN
             </p>
-            <a href="mailto:highency@gmail.com?subject=Interés en Plan Advanced" class="btn-select">SELECCIONAR</a>
+            <a href="https://tally.so/r/rjl0AR" target="_blank" class="btn-select">AGENDAR CALIFICACIÓN</a>
         </div>
     </div>
 
-    <a href="index.html" class="back">< VOLVER AL INICIO</a>
-
-</body>
-</html>
-    <a href="index.html" class="back">< VOLVER</a>
+    <div class="logs-section">
+        <p class="logs-header">00_CAPACIDADES_TÉCNICAS</p>
+        <div class="logs-grid">
+            <div class="log-item">// LLM_OPTIMIZATION</div>
+            <div class="log-item">// NEURAL_MARKETING</div>
+            <div class="log-item">// AUTOMATION_FLOWS</div>
+            <div class="log-item">// OPENAI_API_EXPERT</div>
+            <div class="log-item">// PYTHON_SCRAPING</div>
+            <div class="log-item">// PREDICTIVE_ANALYTICS</div>
+        </div>
+    </div>
 
 </body>
 </html>
