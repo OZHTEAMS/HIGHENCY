@@ -8,91 +8,71 @@
     <style>
         :root { --bg: #000; --txt: #fff; --accent: #00fff9; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            background: var(--bg); color: var(--txt);
-            font-family: 'Inter', sans-serif; text-transform: uppercase;
-            padding: 60px 20px; line-height: 1.6;
-        }
-        body::before {
-            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: url('https://grainy-gradients.vercel.app/noise.svg');
-            opacity: 0.04; pointer-events: none;
-        }
-        .nav-back { margin-bottom: 40px; display: block; color: #666; text-decoration: none; font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 3px; }
-        .nav-back:hover { color: var(--txt); }
-
-        h2 { font-size: clamp(1.5rem, 8vw, 2.5rem); font-weight: 900; letter-spacing: -1px; margin-bottom: 50px; }
+        body { background: var(--bg); color: var(--txt); font-family: 'Inter', sans-serif; text-transform: uppercase; padding: 60px 20px; }
+        body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('https://grainy-gradients.vercel.app/noise.svg'); opacity: 0.04; pointer-events: none; }
         
-        .grid-servicios {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            max-width: 1100px;
-        }
+        nav { display: flex; gap: 30px; margin-bottom: 60px; font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 3px; }
+        nav a { color: #666; text-decoration: none; transition: 0.3s; }
+        nav a:hover, nav a.active { color: var(--txt); }
 
-        .servicio-card {
-            border-left: 1px solid rgba(255,255,255,0.1);
-            padding-left: 25px;
-            padding-bottom: 30px;
-            transition: 0.3s;
-        }
+        h2 { font-size: clamp(1.5rem, 8vw, 2rem); font-weight: 900; letter-spacing: -1px; margin-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; }
+        
+        .grid-servicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 100px; }
+        .servicio-card { border-left: 1px solid rgba(255,255,255,0.1); padding: 0 0 30px 25px; transition: 0.3s; }
         .servicio-card:hover { border-left: 1px solid var(--accent); }
-
         .icon { font-family: 'Space Mono', monospace; color: var(--accent); font-size: 0.8rem; margin-bottom: 15px; display: block; }
-        .title { font-weight: 900; font-size: 1.1rem; letter-spacing: 1px; margin-bottom: 10px; display: block; }
-        .desc { font-size: 0.75rem; color: #999; text-transform: none; max-width: 280px; }
+        .title { font-weight: 900; font-size: 1.1rem; margin-bottom: 10px; display: block; }
+        .desc { font-size: 0.7rem; color: #999; text-transform: none; line-height: 1.8; }
 
-        .footer-cta { margin-top: 80px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 40px; }
+        /* SECCIÓN CÓMO TRABAJAMOS */
+        .workflow { background: rgba(255,255,255,0.02); padding: 40px; border: 1px solid rgba(255,255,255,0.05); }
+        .step { margin-bottom: 40px; position: relative; }
+        .step-num { font-family: 'Space Mono', monospace; color: var(--accent); font-size: 0.7rem; margin-bottom: 10px; display: block; }
+        .step-title { font-weight: 900; font-size: 1.2rem; margin-bottom: 10px; display: block; }
+        .step-desc { font-size: 0.75rem; color: #777; text-transform: none; max-width: 500px; }
     </style>
 </head>
 <body>
 
-    <a href="index.html" class="nav-back">< VOLVER / HOME</a>
+    <nav>
+        <a href="index.html">< INICIO</a>
+        <a href="sistema.html" class="active">SISTEMA</a>
+        <a href="planes.html">PLANES</a>
+    </nav>
 
-    <h2>NUESTRO_SISTEMA</h2>
-
+    <h2>00_NUESTRO_SISTEMA</h2>
     <div class="grid-servicios">
-        
         <div class="servicio-card">
-            <span class="icon">01 // [脳]</span>
-            <span class="title">LLM_OPTIMIZATION</span>
-            <p class="desc">Entrenamos modelos de lenguaje específicos para tu negocio. No es usar ChatGPT, es crear una IA que hable, piense y venda como tu mejor empleado.</p>
+            <span class="icon">[脳]</span> <span class="title">LLM_OPTIMIZATION</span>
+            <p class="desc">Entrenamos IAs con los datos de tu empresa para que respondan y operen con tu identidad de marca única.</p>
         </div>
-
         <div class="servicio-card">
-            <span class="icon">02 // [👁️]</span>
-            <span class="title">NEURAL_MARKETING</span>
-            <p class="desc">Algoritmos que analizan el comportamiento del consumidor para predecir qué contenido generará más ventas antes de publicarlo.</p>
+            <span class="icon">[⚙️]</span> <span class="title">AUTOMATION_FLOWS</span>
+            <p class="desc">Conectamos tus apps (Slack, Gmail, CRM) para que la información fluya sin intervención humana.</p>
         </div>
-
         <div class="servicio-card">
-            <span class="icon">03 // [⚙️]</span>
-            <span class="title">AUTOMATION_FLOWS</span>
-            <p class="desc">Eliminamos las tareas repetitivas. Si un humano lo hace más de 3 veces al día, nosotros lo automatizamos para que ocurra solo.</p>
+            <span class="icon">[🕷️]</span> <span class="title">PYTHON_SCRAPING</span>
+            <p class="desc">Capturamos datos estratégicos de la web en tiempo real para alimentar tus modelos de decisión.</p>
         </div>
-
-        <div class="servicio-card">
-            <span class="icon">04 // [🔗]</span>
-            <span class="title">OPENAI_API_EXPERT</span>
-            <p class="desc">Conexión profunda con la tecnología de OpenAI para integrar inteligencia artificial directamente en tus herramientas actuales (CRMs, Webs, Apps).</p>
-        </div>
-
-        <div class="servicio-card">
-            <span class="icon">05 // [🕷️]</span>
-            <span class="title">PYTHON_SCRAPING</span>
-            <p class="desc">Extracción masiva de datos de la competencia y del mercado para tomar decisiones basadas en números reales, no en suposiciones.</p>
-        </div>
-
-        <div class="servicio-card">
-            <span class="icon">06 // [📉]</span>
-            <span class="title">PREDICTIVE_ANALYTICS</span>
-            <p class="desc">Usamos datos históricos para predecir tendencias futuras. Te decimos qué va a pasar en tu industria antes de que pase.</p>
-        </div>
-
     </div>
 
-    <div class="footer-cta">
-        <a href="planes.html" style="color: var(--accent); text-decoration: none; font-family: 'Space Mono'; font-size: 0.8rem; letter-spacing: 3px;">VER_PLANES_DE_INVERSIÓN ></a>
+    <h2>01_METODOLOGÍA_DE_TRABAJO</h2>
+    <div class="workflow">
+        <div class="step">
+            <span class="step-num">FASE_01 //</span>
+            <span class="step-title">AUDITORÍA_TÉCNICA</span>
+            <p class="step-desc">Analizamos tus procesos actuales para identificar cuellos de botella donde la IA puede ahorrarte más tiempo y dinero.</p>
+        </div>
+        <div class="step">
+            <span class="step-num">FASE_02 //</span>
+            <span class="step-title">DESPLIEGUE_DE_SISTEMAS</span>
+            <p class="step-desc">Construimos la infraestructura. Desde agentes de IA hasta flujos de automatización integrados en tu flujo diario.</p>
+        </div>
+        <div class="step">
+            <span class="step-num">FASE_03 //</span>
+            <span class="step-title">OPTIMIZACIÓN_Y_ESCALA</span>
+            <p class="step-desc">Monitoreamos el rendimiento, ajustamos los modelos y escalamos la solución a otros departamentos de tu empresa.</p>
+        </div>
     </div>
 
 </body>
