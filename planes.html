@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLANES | HIGHENCY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;900&family=Space+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #000; --txt: #fff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: var(--bg); color: var(--txt);
+            font-family: 'Inter', sans-serif; min-height: 100vh;
+            display: flex; flex-direction: column; align-items: center;
+            justify-content: center; text-transform: uppercase; padding: 20px;
+        }
+        body::before {
+            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://grainy-gradients.vercel.app/noise.svg');
+            opacity: 0.04; pointer-events: none;
+        }
+        h2 { font-size: 1.5rem; letter-spacing: 10px; margin-bottom: 50px; opacity: 0.8; }
+        
+        .container {
+            display: flex; gap: 30px; flex-wrap: wrap; justify-content: center;
+            max-width: 1100px; z-index: 5;
+        }
+        .card {
+            border: 1px solid rgba(255,255,255,0.1); padding: 40px;
+            width: 300px; transition: 0.4s; background: rgba(255,255,255,0.02);
+            display: flex; flex-direction: column;
+        }
+        .card:hover { border-color: #fff; transform: translateY(-5px); }
+        
+        .plan-name { font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 4px; color: #555; }
+        .price { font-size: 2rem; font-weight: 900; margin: 20px 0; letter-spacing: 2px; }
+        .details { 
+            font-family: 'Space Mono', monospace; font-size: 0.65rem; 
+            line-height: 2; opacity: 0.6; margin-bottom: 30px; flex-grow: 1;
+        }
+        .btn-select {
+            border: 1px solid #fff; color: #fff; text-decoration: none;
+            padding: 15px; font-size: 0.6rem; letter-spacing: 3px;
+            text-align: center; transition: 0.3s;
+        }
+        .btn-select:hover { background: #fff; color: #000; }
+        
+        .back { margin-top: 60px; font-size: 0.6rem; letter-spacing: 4px; opacity: 0.3; color: #fff; text-decoration: none; }
+    </style>
+</head>
+<body>
 
+    <h2>ESTRUCTURA_PLANES</h2>
+
+    <div class="container">
+        <div class="card">
+            <p class="plan-name">01_STARTER</p>
+            <p class="price">100€</p>
+            <p class="details">
+                • INTERVIEW 1 HOUR<br>
+                • FULL ANALYSIS<br>
+                • STRATEGIC DOCUMENT
+            </p>
+            <a href="mailto:highency@gmail.com?subject=Interes en Plan Starter" class="btn-select">SELECCIONAR</a>
+        </div>
+
+        <div class="card" style="border-color: rgba(255,255,255,0.4);">
+            <p class="plan-name">02_PRO</p>
+            <p class="price">800€<span style="font-size: 10px;">/MES</span></p>
+            <p class="details">
+                • 1 HOUR DAILY (L-V)<br>
+                • FULL OPERATION<br>
+                • REAL-TIME CORRECTIONS
+            </p>
+            <a href="mailto:highency@gmail.com?subject=Interes en Plan Pro" class="btn-select">SELECCIONAR</a>
+        </div>
+
+        <div class="card">
+            <p class="plan-name">03_ADVANCED</p>
+            <p class="price">2000€<span style="font-size: 10px;">/DÍA</span></p>
+            <p class="details">
+                • MONDAY TO FRIDAY<br>
+                • FULL COMPANION<br>
+                • MAXIMUM PRIORITY
+            </p>
+            <a href="mailto:highency@gmail.com?subject=Interes en Plan Advanced" class="btn-select">SELECCIONAR</a>
+        </div>
+    </div>
+
+    <a href="index.html" class="back">< VOLVER</a>
+
+</body>
+</html>
