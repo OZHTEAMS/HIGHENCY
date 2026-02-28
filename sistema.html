@@ -63,14 +63,13 @@
             max-width: 1300px;
         }
 
-        /* Metodología */
         .workflow { margin-top: 20px; }
         .step { margin-bottom: 45px; position: relative; }
         .step-num { font-family: 'Space Mono', monospace; color: var(--accent); font-size: 0.65rem; margin-bottom: 8px; display: block; letter-spacing: 2px; }
         .step-title { font-weight: 900; font-size: 1.1rem; margin-bottom: 10px; display: block; }
         .step-desc { font-size: 0.75rem; color: #777; text-transform: none; line-height: 1.7; max-width: 450px; }
 
-        /* About Box (Nosotros) */
+        /* About Box (Corregido: Sin palabra SYSTEM de fondo) */
         .about-box {
             background: linear-gradient(145deg, #080808, #111);
             padding: 50px;
@@ -78,17 +77,6 @@
             position: relative;
             overflow: hidden;
             height: fit-content;
-        }
-
-        .about-box::after {
-            content: "SYSTEM";
-            position: absolute;
-            bottom: -15px;
-            right: -10px;
-            font-family: 'Space Mono';
-            font-size: 5rem;
-            opacity: 0.03;
-            font-weight: 900;
         }
 
         .location-tag {
@@ -121,7 +109,6 @@
         }
         .glitch-link:hover { color: var(--accent); letter-spacing: 4px; }
 
-        /* Responsive */
         @media (max-width: 900px) {
             .footer-container { grid-template-columns: 1fr; gap: 60px; }
             .about-box { padding: 30px; }
@@ -204,7 +191,6 @@
                 <span class="location-tag">VALENCIA, ES [VLC] // MEDELLÍN, CO [MDE]</span>
                 <p class="about-text">
                     No somos una agencia de marketing tradicional. Somos una <strong>unidad de operaciones inteligentes</strong> con base en los dos hubs tecnológicos más vibrantes del mundo hispano. 
-                    <br><br>
                 </p>
                 <a href="planes.html" class="glitch-link">INICIAR_PROTOCOLO ></a>
             </div>
