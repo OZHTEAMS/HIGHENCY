@@ -6,118 +6,153 @@
     <title>PLANES | HIGHENCY</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;900&family=Space+Mono&display=swap" rel="stylesheet">
     <style>
-        :root { --bg: #000; --txt: #fff; }
+        :root { --bg: #000; --txt: #fff; --accent: #00fff9; --gray: #666; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
             background: var(--bg); color: var(--txt);
             font-family: 'Inter', sans-serif; min-height: 100vh;
             display: flex; flex-direction: column; align-items: center;
             justify-content: flex-start; text-transform: uppercase; padding: 60px 20px;
         }
+
+        /* Ruido de fondo */
         body::before {
             content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: url('https://grainy-gradients.vercel.app/noise.svg');
-            opacity: 0.04; pointer-events: none;
+            opacity: 0.04; pointer-events: none; z-index: 1;
         }
-        h2 { font-size: clamp(1rem, 5vw, 1.5rem); letter-spacing: 10px; margin-bottom: 50px; opacity: 0.8; text-align: center; }
+
+        /* Navegación Refinada */
+        nav { 
+            display: flex; gap: 35px; margin-bottom: 80px; 
+            font-family: 'Space Mono', monospace; font-size: 0.7rem; 
+            letter-spacing: 3px; z-index: 20;
+        }
+        nav a { color: var(--gray); text-decoration: none; transition: 0.3s; }
+        nav a:hover { color: var(--txt); }
+        nav a.active { color: var(--txt); border-bottom: 1px solid var(--accent); padding-bottom: 5px; }
+
+        h2 { 
+            font-size: clamp(1rem, 5vw, 1.4rem); letter-spacing: 12px; 
+            margin-bottom: 60px; opacity: 0.9; text-align: center; 
+            font-weight: 900;
+        }
         
+        /* Contenedor de Cards */
         .container {
-            display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;
-            max-width: 1200px; z-index: 5; margin-bottom: 80px;
+            display: flex; gap: 25px; flex-wrap: wrap; justify-content: center;
+            max-width: 1200px; z-index: 5; margin-bottom: 100px;
         }
+
         .card {
-            border: 1px solid rgba(255,255,255,0.1); padding: 35px;
-            width: 320px; transition: 0.4s; background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.08); padding: 45px 35px;
+            width: 340px; transition: 0.5s cubic-bezier(0.2, 1, 0.3, 1); 
+            background: rgba(255,255,255,0.01);
             display: flex; flex-direction: column;
+            position: relative;
         }
-        .card:hover { border-color: #fff; transform: translateY(-5px); }
+
+        /* Destacar Plan PRO */
+        .card.featured { border-color: var(--accent); background: rgba(0, 255, 249, 0.02); }
+        .card.featured::before {
+            content: "RECOMENDADO"; position: absolute; top: -10px; left: 50%;
+            transform: translateX(-50%); background: var(--accent); color: #000;
+            font-family: 'Space Mono'; font-size: 0.5rem; padding: 2px 10px; letter-spacing: 2px;
+        }
+
+        .card:hover { border-color: var(--txt); transform: translateY(-8px); background: rgba(255,255,255,0.03); }
         
-        .plan-name { font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 4px; color: #666; }
-        .price { font-size: 2rem; font-weight: 900; margin: 15px 0; letter-spacing: 2px; }
-        .currency { font-size: 0.8rem; vertical-align: middle; }
-        .period { font-size: 10px; opacity: 0.5; }
+        .plan-name { font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 4px; color: var(--gray); }
+        .price { font-size: 2.2rem; font-weight: 900; margin: 20px 0; letter-spacing: -1px; }
+        .currency { font-size: 0.9rem; vertical-align: super; margin-left: 5px; color: var(--accent); }
+        .period { font-size: 11px; opacity: 0.4; font-family: 'Space Mono'; }
         
         .details { 
             font-family: 'Space Mono', monospace; font-size: 0.65rem; 
-            line-height: 2.2; opacity: 0.7; margin-bottom: 30px; flex-grow: 1;
+            line-height: 2.4; opacity: 0.6; margin-bottom: 40px; flex-grow: 1;
+            text-transform: none; /* Mejor legibilidad para detalles técnicos */
         }
+
         .btn-select {
-            border: 1px solid #fff; color: #fff; text-decoration: none;
-            padding: 15px; font-size: 0.6rem; letter-spacing: 3px;
-            text-align: center; transition: 0.3s; font-family: 'Space Mono', monospace;
+            border: 1px solid rgba(255,255,255,0.2); color: #fff; text-decoration: none;
+            padding: 18px; font-size: 0.65rem; letter-spacing: 4px;
+            text-align: center; transition: 0.4s; font-family: 'Space Mono', monospace;
         }
-        .btn-select:hover { background: #fff; color: #000; }
+        .btn-select:hover { background: var(--txt); color: #000; box-shadow: 0 0 20px rgba(255,255,255,0.1); }
+        .card.featured .btn-select { border-color: var(--accent); color: var(--accent); }
+        .card.featured .btn-select:hover { background: var(--accent); color: #000; }
 
-        /* SECCIÓN DE LOGS / AUTORIDAD */
+        /* Logs Section */
         .logs-section {
-            width: 100%; max-width: 940px; border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 40px; z-index: 5; margin-bottom: 60px;
+            width: 100%; max-width: 1000px; border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 50px; z-index: 5; margin-bottom: 60px;
         }
-        .logs-header { font-family: 'Space Mono', monospace; font-size: 0.6rem; color: #555; margin-bottom: 30px; letter-spacing: 5px; }
-        .logs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 25px; }
-        .log-item { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 2px; opacity: 0.4; transition: 0.3s; }
-        .log-item:hover { opacity: 1; color: #00fff9; }
+        .logs-header { font-family: 'Space Mono', monospace; font-size: 0.6rem; color: var(--gray); margin-bottom: 35px; letter-spacing: 6px; }
+        .logs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 30px; }
+        .log-item { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 2px; opacity: 0.3; transition: 0.3s; }
+        .log-item:hover { opacity: 1; color: var(--accent); }
         
-        .back { font-size: 0.6rem; letter-spacing: 4px; opacity: 0.3; color: #fff; text-decoration: none; transition: 0.3s; margin-bottom: 40px; }
-        .back:hover { opacity: 1; }
-
-        @media (max-width: 768px) { .card { width: 100%; max-width: 350px; } }
+        @media (max-width: 768px) { .card { width: 100%; } .container { gap: 40px; } }
     </style>
 </head>
 <body>
-<nav style="display: flex; gap: 30px; margin-bottom: 60px; font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase;">
-    <a href="index.html" style="color: #666; text-decoration: none;"> < INICIO</a>
-    <a href="sistema.html" style="color: #666; text-decoration: none;">SISTEMA</a>
-    <a href="planes.html" style="color: #fff; text-decoration: none; border-bottom: 1px solid #fff;">PLANES</a>
-</nav>
-    <a href="index.html" class="back">< VOLVER AL INICIO</a>
 
-    <h2>PLANES</h2>
+    <nav>
+        <a href="index.html">INICIO</a>
+        <a href="sistema.html">SISTEMA</a>
+        <a href="planes.html" class="active">PLANES</a>
+    </nav>
+
+    <h2>03_SELECCIONAR_PROTOCOLO</h2>
 
     <div class="container">
         <div class="card">
             <p class="plan-name">01_STARTER</p>
             <p class="price">100<span class="currency">€</span></p>
             <p class="details">
-                • ENTREVISTA DE 1 HORA<br>
-                • ANÁLISIS COMPLETO<br>
-                • DOCUMENTO DE ESTRATEGIA
+                • Entrevista técnica (1h)<br>
+                • Auditoría de procesos IA<br>
+                • Roadmap de automatización<br>
+                • Diagnóstico de escalabilidad
             </p>
-            <a href="https://tally.so/r/rjl0AR" target="_blank" class="btn-select">AGENDAR</a>
+            <a href="https://tally.so/r/rjl0AR" target="_blank" class="btn-select">AGENDAR_CITA</a>
         </div>
 
-        <div class="card" style="border-color: rgba(255,255,255,0.4);">
-            <p class="plan-name">02_PRO</p>
+        <div class="card featured">
+            <p class="plan-name">02_PRO_OPS</p>
             <p class="price">800<span class="currency">€</span><span class="period">/MES</span></p>
             <p class="details">
-                • 3 REUNIONES SEMANALES (L-V)<br>
-                • 1 HORA DE FEEDBACK Y AVANCES<br>
-                • CORRECCIÓN DE DETALLES<br>
+                • 3 Sesiones de ejecución / semana<br>
+                • Implementación de agentes LLM<br>
+                • Optimización de flujos Python<br>
+                • Soporte técnico prioritario
             </p>
-            <a href="https://tally.so/r/rjl0AR" target="_blank" class="btn-select">AGENDAR</a>
+            <a href="https://tally.so/r/rjl0AR" target="_blank" class="btn-select">INICIAR_FLUJO</a>
         </div>
 
         <div class="card">
             <p class="plan-name">03_ADVANCED</p>
             <p class="price">2000<span class="currency">€</span><span class="period">/MES</span></p>
             <p class="details">
-                • DISPONIBILIDAD LUNES A VIERNES<br>
-                • ACOMPAÑAMIENTO INTEGRAL<br>
-                • PRIORIDAD MÁXIMA DE EJECUCIÓN
+                • Disponibilidad Total (L-V)<br>
+                • Infraestructura IA de punta<br>
+                • Neural Marketing Predictivo<br>
+                • Desarrollo de software a medida
             </p>
-            <a href="https://tally.so/r/rjl0AR" target="_blank" class="btn-select">AGENDAR</a>
+            <a href="https://tally.so/r/rjl0AR" target="_blank" class="btn-select">CONTACTAR_CEO</a>
         </div>
     </div>
 
     <div class="logs-section">
-        <p class="logs-header">00_CAPACIDADES_TÉCNICAS</p>
+        <p class="logs-header">00_INFRAESTRUCTURA_DISPONIBLE</p>
         <div class="logs-grid">
-            <div class="log-item">// LLM_OPTIMIZATION</div>
-            <div class="log-item">// NEURAL_MARKETING</div>
-            <div class="log-item">// AUTOMATION_FLOWS</div>
-            <div class="log-item">// OPENAI_API_EXPERT</div>
-            <div class="log-item">// PYTHON_SCRAPING</div>
-            <div class="log-item">// PREDICTIVE_ANALYTICS</div>
+            <div class="log-item">// LLM_CORE_V3</div>
+            <div class="log-item">// NEURAL_ENGINE</div>
+            <div class="log-item">// AUTO_FLOW_SYST</div>
+            <div class="log-item">// OPENAI_CORE_INTEG</div>
+            <div class="log-item">// PY_SCRAPE_UNIT</div>
+            <div class="log-item">// PREDICTIVE_MODULE</div>
         </div>
     </div>
 
