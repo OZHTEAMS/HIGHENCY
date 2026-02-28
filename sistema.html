@@ -6,30 +6,126 @@
     <title>SISTEMA | HIGHENCY</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;900&family=Space+Mono&display=swap" rel="stylesheet">
     <style>
-        :root { --bg: #000; --txt: #fff; --accent: #00fff9; }
+        :root { --bg: #000; --txt: #fff; --accent: #00fff9; --gray: #666; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: var(--bg); color: var(--txt); font-family: 'Inter', sans-serif; text-transform: uppercase; padding: 60px 20px; }
-        body::before { content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('https://grainy-gradients.vercel.app/noise.svg'); opacity: 0.04; pointer-events: none; }
         
-        nav { display: flex; gap: 30px; margin-bottom: 60px; font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 3px; }
-        nav a { color: #666; text-decoration: none; transition: 0.3s; }
+        body { 
+            background: var(--bg); 
+            color: var(--txt); 
+            font-family: 'Inter', sans-serif; 
+            text-transform: uppercase; 
+            padding: 60px 20px; 
+            overflow-x: hidden;
+        }
+
+        /* Capa de ruido sutil */
+        body::before { 
+            content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: url('https://grainy-gradients.vercel.app/noise.svg'); 
+            opacity: 0.04; pointer-events: none; z-index: 10;
+        }
+
+        /* Navegación */
+        nav { 
+            display: flex; gap: 30px; margin-bottom: 80px; 
+            font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 3px; 
+            position: relative; z-index: 20;
+        }
+        nav a { color: var(--gray); text-decoration: none; transition: 0.3s; }
         nav a:hover, nav a.active { color: var(--txt); }
 
-        h2 { font-size: clamp(1.5rem, 8vw, 2rem); font-weight: 900; letter-spacing: -1px; margin-bottom: 50px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; }
-        
-        .grid-servicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 100px; }
-        .servicio-card { border-left: 1px solid rgba(255,255,255,0.1); padding: 0 0 30px 25px; transition: 0.3s; }
-        .servicio-card:hover { border-left: 1px solid var(--accent); }
-        .icon { font-family: 'Space Mono', monospace; color: var(--accent); font-size: 0.8rem; margin-bottom: 15px; display: block; }
-        .title { font-weight: 900; font-size: 1.1rem; margin-bottom: 10px; display: block; }
-        .desc { font-size: 0.7rem; color: #999; text-transform: none; line-height: 1.8; }
+        h2 { 
+            font-size: clamp(1.2rem, 5vw, 1.8rem); font-weight: 900; 
+            letter-spacing: -1px; margin-bottom: 50px; 
+            border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; 
+        }
 
-        /* SECCIÓN CÓMO TRABAJAMOS */
-        .workflow { background: rgba(255,255,255,0.02); padding: 40px; border: 1px solid rgba(255,255,255,0.05); }
-        .step { margin-bottom: 40px; position: relative; }
-        .step-num { font-family: 'Space Mono', monospace; color: var(--accent); font-size: 0.7rem; margin-bottom: 10px; display: block; }
-        .step-title { font-weight: 900; font-size: 1.2rem; margin-bottom: 10px; display: block; }
-        .step-desc { font-size: 0.75rem; color: #777; text-transform: none; max-width: 500px; }
+        /* Grilla de Servicios */
+        .grid-servicios { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 40px; margin-bottom: 120px; 
+        }
+        .servicio-card { 
+            border-left: 1px solid rgba(255,255,255,0.1); 
+            padding: 10px 0 40px 25px; transition: 0.4s; 
+        }
+        .servicio-card:hover { border-left: 1px solid var(--accent); background: rgba(255,255,255,0.01); }
+        .icon { font-family: 'Space Mono', monospace; color: var(--accent); font-size: 0.75rem; margin-bottom: 15px; display: block; }
+        .title { font-weight: 900; font-size: 1.2rem; margin-bottom: 12px; display: block; letter-spacing: 1px; }
+        .desc { font-size: 0.75rem; color: #999; text-transform: none; line-height: 1.8; max-width: 90%; }
+
+        /* Contenedor Inferior: Metodología + Nosotros */
+        .footer-container {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 80px;
+            margin-top: 60px;
+            max-width: 1300px;
+        }
+
+        /* Metodología */
+        .workflow { margin-top: 20px; }
+        .step { margin-bottom: 45px; position: relative; }
+        .step-num { font-family: 'Space Mono', monospace; color: var(--accent); font-size: 0.65rem; margin-bottom: 8px; display: block; letter-spacing: 2px; }
+        .step-title { font-weight: 900; font-size: 1.1rem; margin-bottom: 10px; display: block; }
+        .step-desc { font-size: 0.75rem; color: #777; text-transform: none; line-height: 1.7; max-width: 450px; }
+
+        /* About Box (Nosotros) */
+        .about-box {
+            background: linear-gradient(145deg, #080808, #111);
+            padding: 50px;
+            border: 1px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+            height: fit-content;
+        }
+
+        .about-box::after {
+            content: "SYSTEM";
+            position: absolute;
+            bottom: -15px;
+            right: -10px;
+            font-family: 'Space Mono';
+            font-size: 5rem;
+            opacity: 0.03;
+            font-weight: 900;
+        }
+
+        .location-tag {
+            font-family: 'Space Mono';
+            color: var(--accent);
+            font-size: 0.6rem;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        .about-text {
+            text-transform: none;
+            font-size: 0.85rem;
+            color: #ccc;
+            line-height: 2;
+        }
+
+        .glitch-link {
+            color: var(--txt);
+            text-decoration: none;
+            font-family: 'Space Mono';
+            font-size: 0.7rem;
+            display: inline-block;
+            margin-top: 40px;
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 5px;
+            transition: 0.3s;
+            letter-spacing: 2px;
+        }
+        .glitch-link:hover { color: var(--accent); letter-spacing: 4px; }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .footer-container { grid-template-columns: 1fr; gap: 60px; }
+            .about-box { padding: 30px; }
+        }
     </style>
 </head>
 <body>
@@ -41,8 +137,8 @@
     </nav>
 
     <h2>00_NUESTRO_SISTEMA</h2>
-  <div class="grid-servicios">
-        
+    
+    <div class="grid-servicios">
         <div class="servicio-card">
             <span class="icon">01 // [🌍]</span>
             <span class="title">LLM_OPTIMIZATION</span>
@@ -78,105 +174,42 @@
             <span class="title">PREDICTIVE_ANALYTICS</span>
             <p class="desc">Usamos datos históricos para predecir tendencias futuras. Te decimos qué va a pasar en tu industria antes de que pase.</p>
         </div>
-
     </div>
-   <style>
-    /* Añade esto a tu sección de estilos */
-    .footer-container {
-        display: grid;
-        grid-template-columns: 1.5fr 1fr;
-        gap: 60px;
-        margin-top: 100px;
-        border-top: 1px solid rgba(255,255,255,0.1);
-        padding-top: 60px;
-    }
 
-    .about-box {
-        background: linear-gradient(145deg, #050505, #111);
-        padding: 40px;
-        border: 1px solid var(--accent);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .about-box::after {
-        content: "LIVE_OPS";
-        position: absolute;
-        bottom: -10px;
-        right: -10px;
-        font-family: 'Space Mono';
-        font-size: 4rem;
-        opacity: 0.03;
-        font-weight: 900;
-    }
-
-    .location-tag {
-        font-family: 'Space Mono';
-        color: var(--accent);
-        font-size: 0.6rem;
-        letter-spacing: 2px;
-        margin-bottom: 20px;
-        display: block;
-    }
-
-    .about-text {
-        text-transform: none;
-        font-size: 0.8rem;
-        color: #ccc;
-        line-height: 1.8;
-    }
-
-    .glitch-link {
-        color: var(--txt);
-        text-decoration: none;
-        font-family: 'Space Mono';
-        font-size: 0.7rem;
-        display: inline-block;
-        margin-top: 30px;
-        border-bottom: 1px solid var(--accent);
-        padding-bottom: 5px;
-    }
-
-    @media (max-width: 768px) {
-        .footer-container { grid-template-columns: 1fr; gap: 40px; }
-    }
-</style>
-
-<div class="footer-container">
-    <div class="workflow-col">
-        <h2>01_METODOLOGÍA</h2>
-        <div class="workflow">
-            <div class="step">
-                <span class="step-num">FASE_01 //</span>
-                <span class="step-title">AUDITORÍA</span>
-                <p class="step-desc">Escaneamos tu operativa para encontrar fugas de capital y tiempo.</p>
-            </div>
-            <div class="step">
-                <span class="step-num">FASE_02 //</span>
-                <span class="step-title">DESPLIEGUE</span>
-                <p class="step-desc">Inyectamos agentes de IA y flujos autónomos en tu flujo de trabajo.</p>
-            </div>
-            <div class="step">
-                <span class="step-num">FASE_03 //</span>
-                <span class="step-title">ESCALA</span>
-                <p class="step-desc">Ajuste de modelos y expansión a nuevos departamentos.</p>
+    <div class="footer-container">
+        <div class="workflow-col">
+            <h2>01_METODOLOGÍA</h2>
+            <div class="workflow">
+                <div class="step">
+                    <span class="step-num">FASE_01 //</span>
+                    <span class="step-title">AUDITORÍA</span>
+                    <p class="step-desc">Escaneamos tu operativa para encontrar fugas de capital y tiempo donde la IA pueda generar retorno inmediato.</p>
+                </div>
+                <div class="step">
+                    <span class="step-num">FASE_02 //</span>
+                    <span class="step-title">DESPLIEGUE</span>
+                    <p class="step-desc">Inyectamos agentes de IA y flujos autónomos que ejecutan tareas complejas sin intervención humana.</p>
+                </div>
+                <div class="step">
+                    <span class="step-num">FASE_03 //</span>
+                    <span class="step-title">ESCALA</span>
+                    <p class="step-desc">Ajuste fino de modelos y expansión del sistema a nuevos departamentos estratégicos de tu empresa.</p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="about-col">
-        <h2>02_NOSOTROS</h2>
-        <div class="about-box">
-            <span class="location-tag">VALENCIA, ES [LC] // MEDELLÍN, CO [MDE]</span>
-            <p class="about-text">
-                No somos una agencia de marketing tradicional. Somos una <strong>unidad de operaciones inteligentes</strong> con sede en los dos hubs tecnológicos más vibrantes del mundo hispano. 
-                <br><br>
-                Combinamos la precisión europea con la velocidad de ejecución de Medellín para construir sistemas que no solo funcionan, sino que dominan mercados. Si buscas un logo, ve a otro lado. Si quieres un sistema que trabaje mientras tú duermes, estás en el lugar correcto.
-            </p>
-            <a href="planes.html" class="glitch-link">INICIAR_PROTOCOLO></a>
+        <div class="about-col">
+            <h2>02_NOSOTROS</h2>
+            <div class="about-box">
+                <span class="location-tag">VALENCIA, ES [VLC] // MEDELLÍN, CO [MDE]</span>
+                <p class="about-text">
+                    No somos una agencia de marketing tradicional. Somos una <strong>unidad de operaciones inteligentes</strong> con base en los dos hubs tecnológicos más vibrantes del mundo hispano. 
+                    <br><br>
+                    Combinamos la precisión estratégica europea con la velocidad de ejecución de Medellín para construir sistemas que no solo funcionan, sino que dominan mercados. Si buscas un logo, ve a otro lado. Si quieres un sistema que trabaje mientras tú duermes, estás en el lugar correcto.
+                </p>
+                <a href="planes.html" class="glitch-link">INICIAR_PROTOCOLO_DE_TRABAJO ></a>
+            </div>
         </div>
-    </div>
-</div>
     </div>
 
 </body>
