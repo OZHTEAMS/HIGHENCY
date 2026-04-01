@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scale Without Borders | HIGHENCY Global Brand Partners</title>
+  <meta name="description" content="HIGHENCY is a dedicated team unlocking global markets for premium brands. 7+ years of proven performance across Colombia, USA, China, and Europe." />
+  <meta name="keywords" content="global brand growth, B2B partnerships, international brand expansion, HIGHENCY, Colombia USA Europe, global logistics, brand strategy" />
+  <meta property="og:title" content="Scale Without Borders — HIGHENCY" />
+  <meta property="og:description" content="Unlocking Global Markets with +7 Years of Proven Performance. Partner with HIGHENCY." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://highency.com/partners" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://highency.com/partners" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;0,14..32,900;1,14..32,300&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { inter: ['Inter', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #000;
+      color: #fff;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── Typography ── */
+    .t-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+    .t-hero {
+      font-size: clamp(3rem, 10vw, 7rem);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      color: #fff;
+    }
+    .t-sub {
+      font-size: clamp(0.85rem, 2.2vw, 1.05rem);
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.01em;
+    }
+    .t-section-title {
+      font-size: clamp(1.6rem, 4.5vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: #fff;
+    }
+    .t-body {
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.45);
+      font-weight: 300;
+    }
+
+    /* ── Layout helpers ── */
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 100px 0; }
+    @media (max-width: 640px) { .section { padding: 64px 0; } }
+
+    /* ── Dividers ── */
+    hr.rule {
+      border: none;
+      height: 1px;
+      background: rgba(255,255,255,0.07);
+      margin: 0 24px;
+    }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.22s, color 0.22s, border-color 0.22s, transform 0.18s;
+      text-decoration: none;
+      white-space: nowrap;
+      padding: 14px 28px;
+    }
+    .btn:active { transform: scale(0.98); }
+
+    .btn-white {
+      background: #fff;
+      color: #000;
+      border: 1px solid #fff;
+    }
+    .btn-white:hover { background: #e0e0e0; border-color: #e0e0e0; }
+
+    .btn-ghost {
+      background: transparent;
+      color: rgba(255,255,255,0.7);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.35);
+      color: #fff;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 32px;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    @media (max-width: 480px) { nav { padding: 16px 20px; } }
+    .nav-logo {
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 120px 24px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-inner { max-width: 1080px; margin: 0 auto; width: 100%; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 99px;
+      margin-bottom: 40px;
+    }
+    .hero-badge-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #fff;
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    .hero-markets {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 40px;
+    }
+    .market-tag {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      padding: 5px 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 4px;
+    }
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 48px;
+    }
+    .hero-ctas .btn { width: 100%; max-width: 280px; }
+    @media (max-width: 480px) { .hero-ctas .btn { max-width: 100%; } }
+
+    /* Ambient background lines */
+    .hero-lines {
+      position: absolute;
+      top: 0; right: 0;
+      width: 50%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 0.04;
+    }
+
+    /* ── EDGE (3 pillars) ── */
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+    @media (max-width: 768px) {
+      .pillar-grid { grid-template-columns: 1fr; }
+    }
+    .pillar {
+      background: #000;
+      padding: 48px 36px;
+      transition: background 0.3s;
+    }
+    .pillar:hover { background: rgba(255,255,255,0.025); }
+    @media (max-width: 640px) { .pillar { padding: 36px 24px; } }
+    .pillar-num {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.2);
+      margin-bottom: 24px;
+    }
+    .pillar-icon {
+      width: 36px; height: 36px;
+      margin-bottom: 24px;
+      opacity: 0.7;
+    }
+    .pillar-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    /* ── STATS ── */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+    @media (max-width: 768px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 400px) { .stats-grid { grid-template-columns: 1fr 1fr; } }
+    .stat-cell {
+      background: #000;
+      padding: 40px 28px;
+      text-align: center;
+    }
+    .stat-cell:hover { background: rgba(255,255,255,0.02); }
+    .stat-num {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: #fff;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-top: 8px;
+    }
+
+    /* ── TRUST ── */
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.07);
+      margin-top: 48px;
+    }
+    @media (max-width: 560px) { .hub-grid { grid-template-columns: 1fr; } }
+    .hub-card {
+      background: #000;
+      padding: 40px 32px;
+    }
+    .hub-card:hover { background: rgba(255,255,255,0.02); }
+    .hub-city {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .hub-role {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 16px;
+    }
+    .industry-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 16px;
+    }
+    .industry-tag {
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      padding: 4px 10px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 3px;
+    }
+
+    /* ── CONVERSION ── */
+    #conversion {
+      background: #fff;
+      color: #000;
+    }
+    #conversion .t-label { color: rgba(0,0,0,0.35); }
+    #conversion .t-section-title { color: #000; }
+    #conversion .t-body { color: rgba(0,0,0,0.5); }
+    #conversion hr.rule-dark {
+      height: 1px;
+      background: rgba(0,0,0,0.08);
+      border: none;
+      margin: 40px 0;
+    }
+
+    .deck-block {
+      padding: 40px 36px;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .deck-block:hover { background: rgba(0,0,0,0.02); }
+
+    .btn-black {
+      background: #000;
+      color: #fff;
+      border: 1px solid #000;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+    .btn-black:hover { background: #222; border-color: #222; }
+
+    /* Form */
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-label {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.4);
+    }
+    .form-input {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(0,0,0,0.15);
+      color: #000;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      padding: 10px 0;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+    .form-input:focus { border-bottom-color: #000; }
+    .form-input::placeholder { color: rgba(0,0,0,0.25); }
+    .form-input option { background: #fff; color: #000; }
+    .form-input.err-field { border-bottom-color: #e00; }
+    .err-msg { font-size: 0.65rem; color: #e00; display: none; }
+    .err-msg.show { display: block; }
+
+    textarea.form-input { resize: none; padding-top: 10px; }
+
+    #form-success-conv { display: none; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 48px 24px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-logo {
+      font-size: 0.85rem;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.5);
+    }
+    .footer-right {
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.2);
+      text-align: right;
+    }
+    .footer-right a { color: rgba(255,255,255,0.3); text-decoration: none; }
+    .footer-right a:hover { color: rgba(255,255,255,0.6); }
+
+    /* ── Scroll reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.75s cubic-bezier(.22,1,.36,1), transform 0.75s cubic-bezier(.22,1,.36,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: #000; }
+    ::-webkit-scrollbar-thumb { background: #333; }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <a href="https://highency.com" class="nav-logo">HIGHENCY</a>
+  <div style="display:flex; gap:12px; align-items:center;">
+    <a href="#conversion" class="btn btn-ghost" style="padding:10px 20px; font-size:0.65rem;">Partner Up</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <!-- Decorative grid lines -->
+  <svg class="hero-lines" viewBox="0 0 500 800" preserveAspectRatio="xMaxYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="100" y1="0" x2="100" y2="800" stroke="white" stroke-width="0.5"/>
+    <line x1="200" y1="0" x2="200" y2="800" stroke="white" stroke-width="0.5"/>
+    <line x1="300" y1="0" x2="300" y2="800" stroke="white" stroke-width="0.5"/>
+    <line x1="400" y1="0" x2="400" y2="800" stroke="white" stroke-width="0.5"/>
+    <line x1="0" y1="200" x2="500" y2="200" stroke="white" stroke-width="0.5"/>
+    <line x1="0" y1="400" x2="500" y2="400" stroke="white" stroke-width="0.5"/>
+    <line x1="0" y1="600" x2="500" y2="600" stroke="white" stroke-width="0.5"/>
+  </svg>
+
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      <span class="t-label" style="letter-spacing:0.15em;">Global Brand Growth · B2B Partnerships</span>
+    </div>
+
+    <h1 class="t-hero">Scale Without<br/>Borders.</h1>
+
+    <p style="margin-top:28px; max-width:520px;" class="t-sub">
+      Unlocking Global Markets with <strong style="color:rgba(255,255,255,0.7); font-weight:500;">+7 Years of Proven Performance</strong> — from local brand to global actor, with a team dedicated to your growth.
+    </p>
+
+    <div class="hero-markets">
+      <span class="market-tag">Colombia</span>
+      <span class="market-tag">USA</span>
+      <span class="market-tag">China</span>
+      <span class="market-tag">Germany</span>
+      <span class="market-tag">Spain</span>
+      <span class="market-tag">EU Markets</span>
+    </div>
+
+    <div class="hero-ctas">
+      <a href="/assets/highency-pitch-deck.pdf" target="_blank" class="btn btn-white" style="max-width:260px;">
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+        Download Pitch Deck
+      </a>
+      <a href="#conversion" class="btn btn-ghost" style="max-width:260px;">Start a Partnership</a>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- ══ STATS BAR ══ -->
+<section class="reveal">
+  <div class="container">
+    <div class="stats-grid" style="margin-top:64px; margin-bottom:64px;">
+      <div class="stat-cell">
+        <div class="stat-num">7+</div>
+        <div class="stat-label">Years Active</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Continents</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">360°</div>
+        <div class="stat-label">Brand Support</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">∞</div>
+        <div class="stat-label">Industries</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- ══ THE HIGHENCY EDGE ══ -->
+<section class="section reveal" id="edge">
+  <div class="container">
+    <div style="margin-bottom:56px;">
+      <p class="t-label" style="margin-bottom:16px;">The HIGHENCY Edge</p>
+      <h2 class="t-section-title">Why Brands Choose Us</h2>
+      <p class="t-body" style="margin-top:16px; max-width:480px;">We're not an agency. We're a dedicated team embedded in your growth — with infrastructure already in place across four markets.</p>
+    </div>
+
+    <div class="pillar-grid">
+      <!-- Pillar 1 -->
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <svg class="pillar-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="18" cy="12" r="5" stroke="white" stroke-width="1.5"/>
+          <circle cx="8" cy="26" r="4" stroke="white" stroke-width="1.5"/>
+          <circle cx="28" cy="26" r="4" stroke="white" stroke-width="1.5"/>
+          <line x1="18" y1="17" x2="8" y2="22" stroke="white" stroke-width="1.2"/>
+          <line x1="18" y1="17" x2="28" y2="22" stroke="white" stroke-width="1.2"/>
+        </svg>
+        <div class="pillar-title">Dedicated Team</div>
+        <p class="t-body">Expert professionals assigned exclusively to your project — not a shared pool. You get continuity, context, and accountability from day one.</p>
+        <div style="margin-top:24px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.07);">
+          <p style="font-size:0.65rem; color:rgba(255,255,255,0.2); letter-spacing:0.1em; text-transform:uppercase;">Brand Strategy · Execution · Growth</p>
+        </div>
+      </div>
+
+      <!-- Pillar 2 -->
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <svg class="pillar-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="18" cy="18" r="14" stroke="white" stroke-width="1.5"/>
+          <ellipse cx="18" cy="18" rx="6" ry="14" stroke="white" stroke-width="1.2"/>
+          <line x1="4" y1="18" x2="32" y2="18" stroke="white" stroke-width="1.2"/>
+          <line x1="5" y1="12" x2="31" y2="12" stroke="white" stroke-width="0.8"/>
+          <line x1="5" y1="24" x2="31" y2="24" stroke="white" stroke-width="0.8"/>
+        </svg>
+        <div class="pillar-title">Global Logistics</div>
+        <p class="t-body">Transcontinental infrastructure across Colombia, USA, and the EU. Customs, fulfilment, and last-mile — already operational, ready to move your product.</p>
+        <div style="margin-top:24px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.07);">
+          <p style="font-size:0.65rem; color:rgba(255,255,255,0.2); letter-spacing:0.1em; text-transform:uppercase;">Colombia · USA · EU · China</p>
+        </div>
+      </div>
+
+      <!-- Pillar 3 -->
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <svg class="pillar-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polyline points="4,28 12,18 18,22 26,10 32,14" stroke="white" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+          <circle cx="32" cy="14" r="2.5" stroke="white" stroke-width="1.2"/>
+          <line x1="4" y1="32" x2="32" y2="32" stroke="white" stroke-width="0.8"/>
+        </svg>
+        <div class="pillar-title">Strategic Growth</div>
+        <p class="t-body">Data-driven market entry and brand positioning. We use real market insights — not templates — to build your expansion roadmap.</p>
+        <div style="margin-top:24px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.07);">
+          <p style="font-size:0.65rem; color:rgba(255,255,255,0.2); letter-spacing:0.1em; text-transform:uppercase;">Market Entry · Positioning · Analytics</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- ══ TRUST / HUBS ══ -->
+<section class="section reveal" id="trust">
+  <div class="container">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px; margin-bottom:0;">
+      <div>
+        <p class="t-label" style="margin-bottom:16px;">Our Infrastructure</p>
+        <h2 class="t-section-title">Backed by Two<br/>Operational Hubs</h2>
+      </div>
+      <p class="t-body" style="max-width:340px;">Operating in multiple industries with physical presence and active networks. Not remote. Not theoretical.</p>
+    </div>
+
+    <div class="hub-grid">
+      <div class="hub-card">
+        <div class="hub-city">Valencia, ES</div>
+        <div class="hub-role">European HQ · Brand Operations</div>
+        <p class="t-body" style="font-size:0.82rem;">EU market access, logistics coordination, brand strategy, and regulatory compliance for Southern Europe and beyond.</p>
+        <div class="industry-tags">
+          <span class="industry-tag">FMCG</span>
+          <span class="industry-tag">Lifestyle</span>
+          <span class="industry-tag">Wellness</span>
+          <span class="industry-tag">Retail</span>
+        </div>
+      </div>
+      <div class="hub-card">
+        <div class="hub-city">Berlin, DE</div>
+        <div class="hub-role">Growth Hub · B2B & Partnerships</div>
+        <p class="t-body" style="font-size:0.82rem;">Northern EU expansion, B2B networking, trade show presence, and distribution partnerships across DACH and Benelux.</p>
+        <div class="industry-tags">
+          <span class="industry-tag">Tech</span>
+          <span class="industry-tag">Beauty</span>
+          <span class="industry-tag">Food & Bev</span>
+          <span class="industry-tag">Specialty</span>
+        </div>
+      </div>
+      <div class="hub-card">
+        <div class="hub-city">Bogotá, CO</div>
+        <div class="hub-role">LATAM Origin · Production & Export</div>
+        <p class="t-body" style="font-size:0.82rem;">Export logistics, production oversight, and brand incubation for LATAM-origin brands entering international markets.</p>
+        <div class="industry-tags">
+          <span class="industry-tag">Coffee</span>
+          <span class="industry-tag">Flowers</span>
+          <span class="industry-tag">Wellness</span>
+          <span class="industry-tag">Apparel</span>
+        </div>
+      </div>
+      <div class="hub-card">
+        <div class="hub-city">USA / China</div>
+        <div class="hub-role">Partner Network · Supply Chain</div>
+        <p class="t-body" style="font-size:0.82rem;">Strategic sourcing, supply chain optimization, and North American distribution via trusted partner operators.</p>
+        <div class="industry-tags">
+          <span class="industry-tag">Manufacturing</span>
+          <span class="industry-tag">E-commerce</span>
+          <span class="industry-tag">3PL</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule" />
+
+<!-- ══ CONVERSION ══ -->
+<section class="section reveal" id="conversion" style="background:#fff; color:#000;">
+  <div class="container">
+    <div style="margin-bottom:56px;">
+      <p class="t-label" style="color:rgba(0,0,0,0.35); margin-bottom:16px;">Let's Build Together</p>
+      <h2 class="t-section-title" style="color:#000;">Ready to Scale?</h2>
+      <p class="t-body" style="color:rgba(0,0,0,0.5); margin-top:12px; max-width:440px;">Download the deck or reach us directly. We respond to qualified inquiries within 24 hours.</p>
+    </div>
+
+    <!-- Pitch Deck CTA block -->
+    <div class="deck-block">
+      <div>
+        <p style="font-size:0.65rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:rgba(0,0,0,0.35); margin-bottom:8px;">Global Pitch Deck</p>
+        <p style="font-size:1rem; font-weight:700; color:#000; letter-spacing:-0.01em;">HIGHENCY Partnership Overview 2026</p>
+        <p style="font-size:0.78rem; color:rgba(0,0,0,0.4); margin-top:4px;">Markets · Strategy · Case Studies · Contact</p>
+      </div>
+      <a href="/assets/highency-pitch-deck.pdf" target="_blank" class="btn-black">
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
+        Download PDF
+      </a>
+    </div>
+
+    <div style="height:1px; background:rgba(0,0,0,0.07); margin:40px 0;"></div>
+
+    <!-- Contact Form -->
+    <div style="max-width:600px;">
+      <p style="font-size:0.7rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:rgba(0,0,0,0.35); margin-bottom:32px;">Or send us a message</p>
+
+      <form id="partner-form" novalidate>
+        <div class="form-row" style="margin-bottom:28px;">
+          <div class="form-group">
+            <label class="form-label" for="f-name">Name *</label>
+            <input id="f-name" name="name" type="text" placeholder="Your full name" class="form-input" />
+            <span class="err-msg" id="err-name">Required</span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="f-email">Email *</label>
+            <input id="f-email" name="email" type="email" placeholder="you@company.com" class="form-input" />
+            <span class="err-msg" id="err-email">Valid email required</span>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom:28px;">
+          <label class="form-label" for="f-industry">Industry *</label>
+          <select id="f-industry" name="industry" class="form-input">
+            <option value="">Select your industry...</option>
+            <option value="fmcg">FMCG / Consumer Goods</option>
+            <option value="lifestyle">Lifestyle & Fashion</option>
+            <option value="wellness">Health & Wellness</option>
+            <option value="food">Food & Beverage</option>
+            <option value="beauty">Beauty & Personal Care</option>
+            <option value="tech">Tech & Electronics</option>
+            <option value="logistics">Logistics & Distribution</option>
+            <option value="other">Other</option>
+          </select>
+          <span class="err-msg" id="err-industry">Please select an option</span>
+        </div>
+
+        <div class="form-group" style="margin-bottom:36px;">
+          <label class="form-label" for="f-msg">Message</label>
+          <textarea id="f-msg" name="message" rows="4" placeholder="Tell us about your brand, market, and what you're looking for..." class="form-input"></textarea>
+        </div>
+
+        <button type="submit" class="btn-black" style="width:100%; justify-content:center; padding:16px;">
+          Send Message
+        </button>
+        <p style="font-size:0.62rem; color:rgba(0,0,0,0.3); margin-top:12px; text-align:center; letter-spacing:0.06em;">No spam. We only follow up when there's a clear fit.</p>
+      </form>
+
+      <div id="form-success-conv" style="text-align:center; padding:48px 0;">
+        <div style="width:52px; height:52px; border:1px solid rgba(0,0,0,0.15); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 20px;">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#000" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+        </div>
+        <p style="font-size:1.1rem; font-weight:700; color:#000; margin-bottom:8px;">Message Received</p>
+        <p style="font-size:0.82rem; color:rgba(0,0,0,0.45);">We'll be in touch within 24 hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <span class="footer-logo">HIGHENCY</span>
+  <div class="footer-right">
+    <p>© 2026 HIGENCY. All rights reserved.</p>
+    <p style="margin-top:4px;">
+      <a href="https://highency.com">highency.com</a>
+      &nbsp;·&nbsp;
+      <a href="mailto:partners@highency.com">partners@highency.com</a>
+    </p>
+  </div>
+</footer>
+
+<!-- ══ SCRIPTS ══ -->
+<script>
+  // Scroll reveal
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Form
+  const form = document.getElementById('partner-form');
+  const successEl = document.getElementById('form-success-conv');
+
+  function setErr(inputId, errId, show) {
+    const input = document.getElementById(inputId);
+    const err = document.getElementById(errId);
+    input.classList.toggle('err-field', show);
+    err.classList.toggle('show', show);
+  }
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    let ok = true;
+
+    const name = document.getElementById('f-name').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    const industry = document.getElementById('f-industry').value;
+
+    if (!name) { setErr('f-name','err-name',true); ok=false; } else setErr('f-name','err-name',false);
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setErr('f-email','err-email',true); ok=false; } else setErr('f-email','err-email',false);
+    if (!industry) { setErr('f-industry','err-industry',true); ok=false; } else setErr('f-industry','err-industry',false);
+
+    if (!ok) return;
+
+    // ── Replace with actual API endpoint ──
+    // fetch('/api/partner-apply', { method:'POST', headers:{'Content-Type':'application/json'},
+    //   body: JSON.stringify({ name, email, industry, message: document.getElementById('f-msg').value }) })
+
+    // Fallback: mailto
+    const subject = encodeURIComponent('Partnership Inquiry — ' + name);
+    const body = encodeURIComponent(
+      'Name: ' + name + '\nEmail: ' + email + '\nIndustry: ' + industry +
+      '\n\n' + document.getElementById('f-msg').value
+    );
+
+    form.style.display = 'none';
+    successEl.style.display = 'block';
+
+    setTimeout(() => {
+      window.location.href = 'mailto:partners@highency.com?subject=' + subject + '&body=' + body;
+    }, 700);
+  });
+
+  // Clear error on input
+  ['f-name','f-email','f-industry'].forEach(id => {
+    const el = document.getElementById(id);
+    el.addEventListener('input', () => { el.classList.remove('err-field'); });
+  });
+</script>
+</body>
+</html>
